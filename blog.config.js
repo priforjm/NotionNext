@@ -3,26 +3,27 @@ const BLOG = {
   // Important page_id！！！Duplicate Template from  https://www.notion.so/tanghh/02ab3b8678004aa69e9e415905ef32a5
   NOTION_PAGE_ID:
     process.env.NOTION_PAGE_ID || '02ab3b8678004aa69e9e415905ef32a5',
+    
   PSEUDO_STATIC: false, // 伪静态路径，开启后所有文章URL都以 .html 结尾。
   NEXT_REVALIDATE_SECOND: process.env.NEXT_PUBLIC_REVALIDATE_SECOND || 5, // 更新内容缓存间隔 单位(秒)；即每个页面有5秒的纯静态期、此期间无论多少次访问都不会抓取notion数据；调大该值有助于节省Vercel资源、同时提升访问速率，但也会使文章更新有延迟。
-  THEME: process.env.NEXT_PUBLIC_THEME || 'hexo', // 主题， 支持 ['next','hexo',"fukasawa','medium','example'] @see https://preview.tangly1024.com
-  THEME_SWITCH: process.env.NEXT_PUBLIC_THEME_SWITCH || false, // 是否显示切换主题按钮
+  THEME: process.env.NEXT_PUBLIC_THEME || 'matery', // 主题， 支持 ['next','hexo',"fukasawa','medium','example'] @see https://preview.tangly1024.com
+  THEME_SWITCH: process.env.NEXT_PUBLIC_THEME_SWITCH || true, // 是否显示切换主题按钮
   LANG: process.env.NEXT_PUBLIC_LANG || 'zh-CN', // e.g 'zh-CN','en-US'  see /lib/lang.js for more.
-  SINCE: 2021, // e.g if leave this empty, current year will be used.
+  SINCE: 2019, // e.g if leave this empty, current year will be used.
   APPEARANCE: process.env.NEXT_PUBLIC_APPEARANCE || 'light', // ['light', 'dark', 'auto'], // light 日间模式 ， dark夜间模式， auto根据时间和主题自动夜间模式
   APPEARANCE_DARK_TIME: process.env.NEXT_PUBLIC_APPEARANCE_DARK_TIME || [18, 6], // 夜间模式起至时间，false时关闭根据时间自动切换夜间模式
 
-  CUSTOM_MENU: process.env.NEXT_PUBLIC_CUSTOM_MENU || false, // 支持Menu 类型，从3.12.0版本起，各主题将逐步支持灵活的二级菜单配置，替代了原来的Page类型，此配置是试验功能、默认关闭。
+  CUSTOM_MENU: process.env.NEXT_PUBLIC_CUSTOM_MENU || true, // 支持Menu 类型，从3.12.0版本起，各主题将逐步支持灵活的二级菜单配置，替代了原来的Page类型，此配置是试验功能、默认关闭。
 
-  AUTHOR: process.env.NEXT_PUBLIC_AUTHOR || 'NotionNext', // 您的昵称 例如 tangly1024
-  BIO: process.env.NEXT_PUBLIC_BIO || '一个普通的干饭人🍚', // 作者简介
-  LINK: process.env.NEXT_PUBLIC_LINK || 'https://tangly1024.com', // 网站地址
+  AUTHOR: process.env.NEXT_PUBLIC_AUTHOR || 'Jimmy Huang', // 您的昵称 例如 tangly1024
+  BIO: process.env.NEXT_PUBLIC_BIO || '成年人的QQ空间', // 作者简介
+  LINK: process.env.NEXT_PUBLIC_LINK || 'https://jimmyhjh.com', // 网站地址
   KEYWORDS: process.env.NEXT_PUBLIC_KEYWORD || 'Notion, 博客', // 网站关键词 英文逗号隔开
   // 社交链接，不需要可留空白，例如 CONTACT_WEIBO:''
-  CONTACT_EMAIL: process.env.NEXT_PUBLIC_CONTACT_EMAIL || '', // 邮箱地址 例如mail@tangly1024.com
+  CONTACT_EMAIL: process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'jimmy.huang.work@outlook.com', // 邮箱地址 例如mail@tangly1024.com
   CONTACT_WEIBO: process.env.NEXT_PUBLIC_CONTACT_WEIBO || '', // 你的微博个人主页
   CONTACT_TWITTER: process.env.NEXT_PUBLIC_CONTACT_TWITTER || '', // 你的twitter个人主页
-  CONTACT_GITHUB: process.env.NEXT_PUBLIC_CONTACT_GITHUB || '', // 你的github个人主页 例如 https://github.com/tangly1024
+  CONTACT_GITHUB: process.env.NEXT_PUBLIC_CONTACT_GITHUB || 'https://github.com/jimmyhuang22', // 你的github个人主页 例如 https://github.com/tangly1024
   CONTACT_TELEGRAM: process.env.NEXT_PUBLIC_CONTACT_TELEGRAM || '', // 你的telegram 地址 例如 https://t.me/tangly_1024
   CONTACT_LINKEDIN: process.env.NEXT_PUBLIC_CONTACT_LINKEDIN || '', // 你的linkedIn 首页
 
@@ -88,8 +89,8 @@ const BLOG = {
     'https://npm.elemecdn.com/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js',
   PRISM_JS_PATH: 'https://npm.elemecdn.com/prismjs@1.29.0/components/',
   PRISM_THEME_PATH:
-    'https://npm.elemecdn.com/prism-themes/themes/prism-a11y-dark.min.css', // 代码样式主题 更多参考 https://github.com/PrismJS/prism-themes
-  CODE_MAC_BAR: true, // 代码左上角显示mac的红黄绿图标
+    'https://npm.elemecdn.com/prism-themes/themes/prism-one-dark.css', // 代码样式主题 更多参考 https://github.com/PrismJS/prism-themes
+  CODE_MAC_BAR: false, // 代码左上角显示mac的红黄绿图标
   CODE_LINE_NUMBERS: process.env.NEXT_PUBLIC_CODE_LINE_NUMBERS || 'false', // 是否显示行号
 
   BACKGROUND_LIGHT: '#eeeeee', // use hex value, don't forget '#' e.g #fffefc
@@ -100,7 +101,7 @@ const BLOG = {
   POSTS_SHARE_SERVICES: process.env.NEXT_PUBLIC_POST_SHARE_SERVICES || 'link,wechat,qq,weibo,email,facebook,twitter,telegram,messenger,line,reddit,whatsapp,linkedin', // 分享的服務，按顺序显示,逗号隔开
   // 所有支持的分享服务：link(复制链接),wechat(微信),qq,weibo(微博),email(邮件),facebook,twitter,telegram,messenger,line,reddit,whatsapp,linkedin,vkshare,okshare,tumblr,livejournal,mailru,viber,workplace,pocket,instapaper,hatena
 
-  POST_URL_PREFIX: process.env.NEXT_PUBLIC_POST_URL_PREFIX || 'article',
+  POST_URL_PREFIX: process.env.NEXT_PUBLIC_POST_URL_PREFIX || '',
   // POST类型文章的默认路径前缀，例如默认POST类型的路径是  /article/[slug]
   // 如果此项配置为 '' 空， 则文章将没有前缀路径，使用场景： 希望文章前缀路径为 /post 的情况 支持多级
   // 支援類似 WP 可自訂文章連結格式的功能：https://wordpress.org/documentation/article/customize-permalinks/，目前只先實作 %year%/%month%/%day%
@@ -117,7 +118,7 @@ const BLOG = {
   PREVIEW_TAG_COUNT: 16, // 首页最多展示的标签数量，0为不限制
 
   // 鼠标点击烟花特效
-  FIREWORKS: process.env.NEXT_PUBLIC_FIREWORKS || false, // 开关
+  FIREWORKS: process.env.NEXT_PUBLIC_FIREWORKS || true, // 开关
   // 烟花色彩，感谢 https://github.com/Vixcity 提交的色彩
   FIREWORKS_COLOR: [
     '255, 20, 97',
@@ -141,14 +142,14 @@ const BLOG = {
   STARRY_SKY: process.env.NEXT_PUBLIC_STARRY_SKY || false, // 开关
 
   // 悬浮挂件
-  WIDGET_PET: process.env.NEXT_PUBLIC_WIDGET_PET || true, // 是否显示宠物挂件
+  WIDGET_PET: process.env.NEXT_PUBLIC_WIDGET_PET || false, // 是否显示宠物挂件
   WIDGET_PET_LINK:
     process.env.NEXT_PUBLIC_WIDGET_PET_LINK ||
     'https://cdn.jsdelivr.net/npm/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json', // 挂件模型地址 @see https://github.com/xiazeyu/live2d-widget-models
   WIDGET_PET_SWITCH_THEME: true, // 点击宠物挂件切换博客主题
 
   // 音乐播放插件
-  MUSIC_PLAYER: process.env.NEXT_PUBLIC_MUSIC_PLAYER || false, // 是否使用音乐播放插件
+  MUSIC_PLAYER: process.env.NEXT_PUBLIC_MUSIC_PLAYER || true, // 是否使用音乐播放插件
   MUSIC_PLAYER_VISIBLE: process.env.NEXT_PUBLIC_MUSIC_PLAYER_VISIBLE || true, // 是否在左下角显示播放和切换，如果使用播放器，打开自动播放再隐藏，就会以类似背景音乐的方式播放，无法取消和暂停
   MUSIC_PLAYER_AUTO_PLAY:
     process.env.NEXT_PUBLIC_MUSIC_PLAYER_AUTO_PLAY || true, // 是否自动播放，不过自动播放时常不生效（移动设备不支持自动播放）
@@ -156,22 +157,106 @@ const BLOG = {
   MUSIC_PLAYER_CDN_URL:
     process.env.NEXT_PUBLIC_MUSIC_PLAYER_CDN_URL ||
     'https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.js',
-  MUSIC_PLAYER_ORDER: process.env.NEXT_PUBLIC_MUSIC_PLAYER_ORDER || 'list', // 默认播放方式，顺序 list，随机 random
+  MUSIC_PLAYER_ORDER: process.env.NEXT_PUBLIC_MUSIC_PLAYER_ORDER || 'random', // 默认播放方式，顺序 list，随机 random
   MUSIC_PLAYER_AUDIO_LIST: [
     // 示例音乐列表。除了以下配置外，还可配置歌词，具体配置项看此文档 https://aplayer.js.org/#/zh-Hans/
     {
-      name: '风を共に舞う気持ち',
-      artist: 'Falcom Sound Team jdk',
-      url: 'https://music.163.com/song/media/outer/url?id=731419.mp3',
+      name: '在りし日のふたり',
+      artist: '光田康典',
+      url: 'https://music.163.com/song/media/outer/url?id=565975062.mp3',
       cover:
-        'https://p2.music.126.net/kn6ugISTonvqJh3LHLaPtQ==/599233837187278.jpg'
+        'http://p1.music.126.net/Y8uzZx4RMSHuyKIUVXm6Lg==/109951163312431204.jpg?param=130y130'
     },
     {
-      name: '王都グランセル',
-      artist: 'Falcom Sound Team jdk',
-      url: 'https://music.163.com/song/media/outer/url?id=731355.mp3',
+      name: '夢の中の楽園',
+      artist: '光田康典',
+      url: 'https://music.163.com/song/media/outer/url?id=565966059.mp3',
       cover:
-        'https://p1.music.126.net/kn6ugISTonvqJh3LHLaPtQ==/599233837187278.jpg'
+        'http://p1.music.126.net/Y8uzZx4RMSHuyKIUVXm6Lg==/109951163312431204.jpg?param=130y130'
+    },
+    {
+      name: 'インヴィディア烈王国',
+      artist: '平松建治',
+      url: 'https://music.163.com/song/media/outer/url?id=565966065.mp3',
+      cover:
+        'http://p1.music.126.net/Y8uzZx4RMSHuyKIUVXm6Lg==/109951163312431204.jpg?param=130y130'
+    },
+    {
+      name: 'インヴィディア烈王国/夜',
+      artist: '工藤ともり / 山中裕代',
+      url: 'https://music.163.com/song/media/outer/url?id=565970070.mp3',
+      cover:
+        'http://p1.music.126.net/Y8uzZx4RMSHuyKIUVXm6Lg==/109951163312431204.jpg?param=130y130'
+    },
+    {
+      name: 'グーラ領/森林',
+      artist: '清田愛未',
+      url: 'https://music.163.com/song/media/outer/url?id=565966060.mp3',
+      cover:
+        'http://p1.music.126.net/Y8uzZx4RMSHuyKIUVXm6Lg==/109951163312431204.jpg?param=130y130'
+    },
+    {
+      name: '触れあい',
+      artist: '平松建治',
+      url: 'https://music.163.com/song/media/outer/url?id=565970067.mp3',
+      cover:
+        'http://p1.music.126.net/Y8uzZx4RMSHuyKIUVXm6Lg==/109951163312431204.jpg?param=130y130'
+    },
+    {
+      name: 'フレースヴェルグ傭兵団',
+      artist: '平松建治',
+      url: 'https://music.163.com/song/media/outer/url?id=565841112.mp3',
+      cover:
+        'http://p1.music.126.net/Y8uzZx4RMSHuyKIUVXm6Lg==/109951163312431204.jpg?param=130y130'
+    },
+    {
+      name: '首都フォンス・マイム/夜',
+      artist: '工藤ともり / 山中裕代',
+      url: 'https://music.163.com/song/media/outer/url?id=565841114.mp3',
+      cover:
+        'http://p1.music.126.net/Y8uzZx4RMSHuyKIUVXm6Lg==/109951163312431204.jpg?param=130y130'
+    },
+    {
+      name: 'スペルビア帝国/夜',
+      artist: '平松建治',
+      url: 'https://music.163.com/song/media/outer/url?id=565975068.mp3',
+      cover:
+        'http://p1.music.126.net/Y8uzZx4RMSHuyKIUVXm6Lg==/109951163312431204.jpg?param=130y130'
+    },
+    {
+      name: '故郷/夜',
+      artist: '工藤ともり / 山中裕代',
+      url: 'https://music.163.com/song/media/outer/url?id=565841121.mp3',
+      cover:
+        'http://p1.music.126.net/Y8uzZx4RMSHuyKIUVXm6Lg==/109951163312431204.jpg?param=130y130'
+    },
+    {
+      name: 'ルクスリア王国/夜',
+      artist: '工藤ともり / 山中裕代',
+      url: 'https://music.163.com/song/media/outer/url?id=565975073.mp3',
+      cover:
+        'http://p1.music.126.net/Y8uzZx4RMSHuyKIUVXm6Lg==/109951163312431204.jpg?param=130y130'
+    },
+    {
+      name: 'サイハテ村／夜',
+      artist: '清田愛未',
+      url: 'https://music.163.com/song/media/outer/url?id=27785523.mp3',
+      cover:
+        'http://p1.music.126.net/Y8uzZx4RMSHuyKIUVXm6Lg==/109951163312431204.jpg?param=130y130'
+    },
+    {
+      name: 'Drifting Soul',
+      artist: 'Jen Bird',
+      url: 'https://music.163.com/song/media/outer/url?id=565970072.mp3',
+      cover:
+        'http://p1.music.126.net/Y8uzZx4RMSHuyKIUVXm6Lg==/109951163312431204.jpg?param=130y130'
+    },
+    {
+      name: 'Drifting Soul (Remix)',
+      artist: '光田康典',
+      url: 'https://music.163.com/song/media/outer/url?id=1968743528.mp3',
+      cover:
+        'http://p1.music.126.net/Y8uzZx4RMSHuyKIUVXm6Lg==/109951163312431204.jpg?param=130y130'
     }
   ],
   MUSIC_PLAYER_METING: process.env.NEXT_PUBLIC_MUSIC_PLAYER_METING || false, // 是否要开启 MetingJS，从平台获取歌单。会覆盖自定义的 MUSIC_PLAYER_AUDIO_LIST，更多配置信息：https://github.com/metowolf/MetingJS
