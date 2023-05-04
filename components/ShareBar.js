@@ -1,3 +1,12 @@
+/*
+ * @Author: JimmyHuang
+ * @Blog: https://jimmyhjh.com
+ * @Date: 2023-05-03 11:38:56
+ * @LastEditors: JimmyHuang
+ * @LastEditTime: 2023-05-04 09:24:55
+ * @FilePath: /NotionNext-jimmy/components/ShareBar.js
+ * @Description: 
+ */
 import BLOG from '@/blog.config'
 import { useRouter } from 'next/router'
 import React from 'react'
