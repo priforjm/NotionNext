@@ -1,3 +1,12 @@
+/*
+ * @Author: JimmyHuang
+ * @Blog: https://jimmyhjh.com
+ * @Date: 2023-05-03 11:38:56
+ * @LastEditors: JimmyHuang
+ * @LastEditTime: 2023-05-04 08:44:41
+ * @FilePath: /NotionNext-jimmy/themes/jimmy/components/Footer.js
+ * @Description: 
+ */
 import React from 'react'
 import BLOG from '@/blog.config'
 // import DarkModeButton from '@/components/DarkModeButton'
@@ -26,9 +35,7 @@ const Footer = ({ title }) => {
             <i className='fas fa-eye'/><span className='px-1 busuanzi_value_site_pv'> </span>  </span>
       <span className='pl-2 hidden busuanzi_container_site_uv'>
         <i className='fas fa-users'/> <span className='px-1 busuanzi_value_site_uv'> </span> </span>
-        <br/>
-        <h1>{title}</h1>
-        <span className='text-xs '>Powered by <a href='https://github.com/tangly1024/NotionNext' className='underline dark:text-gray-300'>NotionNext {BLOG.VERSION}</a>.</span></span><br/>
+        </span><br/>
 
     </footer>
   )
